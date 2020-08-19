@@ -4,6 +4,37 @@
     Facilities
 {% endblock title %}
 
+{% block head %}
+    {{ super() }}
+    <style>
+        .html-frame {
+            font-size: .8em;
+        }
+        .html-frame h2 {
+            margin-top: 1rem;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+    </style>
+{% endblock head %}
+
 {% block content %}
     <h1>All Facilities</h1>
+    <ul class="list-group">
+        {% for facility in facilities  %}
+            <li class="list-group-item flex-column align-items-start pt-4 pb-4">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ facility['FacilityName'] }}</h5>
+                    <small>ID: {{ facility['FacilityID'] }}</small>
+                </div>
+                <div class="mb-1 html-frame">{{ facility['FacilityDescription'] | safe }}</div>
+                <div class="mt-4">
+                    <em>
+                        <small>{{ ('Not ' if facility['Reservable'] == 'true' else '') + 'Reservable' }},</small>
+                        <small>Last updated: {{ facility['LastUpdatedDate'] }}</small>
+                    </em>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock content %}
