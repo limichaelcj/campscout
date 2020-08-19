@@ -7,7 +7,10 @@
 {% endblock head %}
 
 {% block body %}
-    <main id="content">
+    <nav class="navbar shadow">
+        <div class="navbar-brand">Campscout</div>
+    </nav>
+    <main id="content" class="container p-4">
         {% block content %}{% endblock %}
     </main>
 {% endblock body %}

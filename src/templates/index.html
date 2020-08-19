@@ -1,16 +1,12 @@
 {% extends 'layout/default.html' %}
 
 {% block title %}
-    Index
+    Home
 {% endblock title %}
     
 {% block content %}
-    <nav class="navbar shadow">
-        <h1>Campscout</h1>
-    </nav>
-    <div class="container p-4">
-
-        <p>Campsite availability from recreation.gov</p>
-    </div>
-
+    <p>Campsite availability from recreation.gov</p>
+    <a href="/facilities" class="btn btn-primary">
+        Find a facility
+    </a>
 {% endblock content %}
