@@ -1,14 +1,16 @@
 {% extends 'layout/default.html' %}
 
-{% block head %}
-    {{ super() }}
-
-    {% block title %}
-        Index
-    {% endblock title %}
-{% endblock head %}
-
+{% block title %}
+    Index
+{% endblock title %}
+    
 {% block content %}
-    <h1>Campscout</h1>
-    <p>Campsite availability from recreation.gov</p>
+    <nav class="navbar shadow">
+        <h1>Campscout</h1>
+    </nav>
+    <div class="container p-4">
+
+        <p>Campsite availability from recreation.gov</p>
+    </div>
+
 {% endblock content %}
